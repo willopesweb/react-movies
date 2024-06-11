@@ -3,11 +3,11 @@ import { useSelector } from 'react-redux';
 import MovieList from '../components/MovieList';
 
 const FavoritesPage = () => {
-  const favorites = useSelector(state => state.favorites);
+  /* const favorites = useSelector(state => state.favorites); */
   return (
     <div>
       <h1>Favoritos</h1>
-      <MovieList movies={favorites} />
+      {/* <MovieList movies={favorites} /> */}
     </div>
   )
 }
