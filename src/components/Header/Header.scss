@@ -7,6 +7,7 @@ $desktop: 600;
   color: var(--text-color-1);
   height: rem(80);
   position: fixed;
+  top:0;
   width: 100%;
   z-index: z-index("fixed-header");
 

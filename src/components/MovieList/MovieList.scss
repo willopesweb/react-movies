@@ -1,0 +1,15 @@
+@import "../../assets/scss/abstracts";
+
+.c-movies {
+
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--global-module-size);
+  padding: var(--global-module-size);
+  background-color: rgba(0,0,0,.2);
+
+  @include breakpoint(600){
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
