@@ -3,7 +3,7 @@ export const baseImageUrl = "https://media.themoviedb.org/t/p/w220_and_h330_face
 export interface Movie {
   adult: boolean;
   backdrop_path: string;
-  genre_ids: Array<Number>;
+  genres?: Array<Genre>;
   id: number;
   name: string;
   original_language: string;

@@ -1,0 +1,40 @@
+@import "../../assets/scss/abstracts";
+
+.l-movie {
+  &__content {
+    display: grid;
+    grid-template-columns: 200px calc(100% - 220px);
+    gap: var(--global-module-size);
+    padding: var(--global-module-size);
+    background-color: var(--background-content-color);
+    width: 100%;
+  }
+
+  &__poster {
+    border-radius: rem(15);
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--global-module-size);
+  }
+
+  &__genres {
+    display: flex;
+    gap: rem(10);
+
+    li {
+      border-radius: rem(10);
+      padding: rem(10);
+      border: 2px solid var(--text-color-1);
+    }
+  }
+}

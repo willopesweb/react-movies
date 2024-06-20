@@ -7,8 +7,12 @@ const HomePage = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
   useEffect(() => {
     const getMovies = async () => {
-      const movies = await fetchMovies();
-      setMovies(movies);
+      try {
+        const movies = await fetchMovies();
+        setMovies(movies);
+      } catch (error) {
+        console.error('Erro ao buscar filmes:', error);
+      }
     }
 
     getMovies();

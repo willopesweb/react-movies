@@ -7,9 +7,9 @@
   grid-template-columns: 1fr 1fr;
   gap: var(--global-module-size);
   padding: var(--global-module-size);
-  background-color: rgba(0,0,0,.2);
+  background-color: var(--background-content-color);
 
-  @include breakpoint(600){
+  @include breakpoint(600) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }

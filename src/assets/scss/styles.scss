@@ -5,10 +5,10 @@
 
 body {
   background: linear-gradient(to right, #10101f, #11122b, #0c143c);
-  color:var(--text-color-1);
+  color: var(--text-color-1);
 }
 
-main{
+main {
   @include content;
   margin-top: rem(100);
 }
