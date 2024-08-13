@@ -7,15 +7,15 @@ $desktop: 600;
   color: var(--text-color-1);
   height: rem(80);
   position: fixed;
-  top:0;
+  top: 0;
   width: 100%;
   z-index: z-index("fixed-header");
 
   &__content {
-    @include content("grid");
     padding-top: var(--global-module-size);
     padding-bottom: var(--global-module-size);
     grid-template-columns: 1fr 1fr;
+    @include content("grid");
 
     @include breakpoint($desktop) {
       grid-template-columns: 1fr 1fr 1fr;
@@ -103,7 +103,8 @@ $desktop: 600;
 
     &:hover,
     &:focus,
-    &:active {
+    &:active,
+    &.active {
       color: var(--theme-color-2);
 
       svg path {

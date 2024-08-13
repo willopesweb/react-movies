@@ -5,16 +5,15 @@
   border: 2px solid var(--theme-color-2);
   width: 100%;
   max-width: 500px;
+  display: flex;
 
   &:focus,
   &:active {
     border-color: var(--theme-color-3);
   }
 
-  input {
+  .c-input {
     height: 100%;
     width: 100%;
-    border: 0;
-    outline: 0;
   }
 }

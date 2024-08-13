@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Icon from '../Icon';
 import "./MovieCard.scss";
 import { useState } from "react";
+import Image from "../Image/Image";
 
 interface MovieCardProps {
   movie: Movie;
@@ -18,7 +19,7 @@ const MovieCard = ({ movie }: MovieCardProps) => {
       <Link to={`/movie/${movie.id}`}>
 
         <div className="c-movie__image">
-          <img height="330" width="220" src={`${baseImageUrl}${movie.poster_path}`} alt={movie.title} title={movie.title} loading="lazy" />
+          <Image height="330" width="220" src={`${baseImageUrl}${movie.poster_path}`} alt={movie.title} title={movie.title} loading="lazy" />
         </div>
         <h1 className="c-movie__title">{movie.title}</h1>
       </Link>

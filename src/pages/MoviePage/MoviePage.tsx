@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMovieDetails } from '../../api/movieApi';
 import { Movie, baseImageUrl } from '../../types';
+import Image from '../../components/Image/Image';
 import "./MoviePage.scss";
 
 const MoviePage = () => {
@@ -28,7 +29,7 @@ const MoviePage = () => {
       {movie ? (
         <div className="l-movie__content">
           <div className="l-movie__poster">
-            <img src={`${baseImageUrl}${movie.poster_path}`} alt={movie.title} />
+            <Image src={`${baseImageUrl}${movie.poster_path}`} alt={movie.title} />
           </div>
           <div className="l-movie__info">
             <h1>{movie.title}</h1>
