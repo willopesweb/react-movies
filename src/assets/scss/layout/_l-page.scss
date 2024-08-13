@@ -4,8 +4,8 @@
     display: flex;
     flex-direction: column;
     gap: rem(10);
-    width: 100%;
-    padding-top: var(--global-module-size);
     padding-bottom: var(--global-module-size);
+    padding-top: var(--global-module-size);
+    width: 100%;
   }
 }

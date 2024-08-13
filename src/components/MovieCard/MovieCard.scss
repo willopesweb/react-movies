@@ -1,4 +1,4 @@
-@import "../../assets/scss/abstracts";
+@import url("../../assets/scss/abstracts");
 
 .c-movie {
   position: relative;
@@ -11,8 +11,8 @@
     }
 
     .c-movie__favorite {
-      transform: translateY(0);
       opacity: 1;
+      transform: translateY(0);
       visibility: visible;
     }
   }
@@ -36,14 +36,14 @@
   }
 
   &__favorite {
+    cursor: pointer;
+    left: 10px;
+    opacity: 0;
     position: absolute;
     top: 10px;
-    left: 10px;
     transform: translateY(-10px);
-    opacity: 0;
-    visibility: hidden;
     transition: var(--theme-transition);
-    cursor: pointer;
+    visibility: hidden;
 
     &:hover,
     &:focus,

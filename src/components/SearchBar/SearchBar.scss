@@ -1,11 +1,11 @@
-@import "../../assets/scss/abstracts";
+@import url("../../assets/scss/abstracts");
 
 .c-search {
   background-color: var(--text-color-1);
   border: 2px solid var(--theme-color-2);
-  width: 100%;
-  max-width: 500px;
   display: flex;
+  max-width: 500px;
+  width: 100%;
 
   &:focus,
   &:active {

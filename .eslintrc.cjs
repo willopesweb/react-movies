@@ -15,10 +15,5 @@ module.exports = {
       { allowConstantExport: true },
     ],
   },
-  overrides: [
-    {
-      "files": ["**/*.scss"],
-      "processor": "stylelint/stylelint"
-    }
-  ]
+  overrides: [ ]
 }

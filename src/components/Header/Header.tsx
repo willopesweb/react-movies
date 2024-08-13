@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Header.scss';
 import { ReactSVG } from 'react-svg';
 import Logo from "./logo.svg";
-import { NavLink, NavLinkProps } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Icon from '../Icon';
 import SearchBar from '../SearchBar/SearchBar';
 import Modal from '../Modal/Modal';

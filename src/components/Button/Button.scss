@@ -1,19 +1,19 @@
 $component-name: c-button;
 
 .#{$component-name} {
-  text-decoration: none;
-  text-align: center;
-  font-family: var(--theme-font-family);
+  align-items: center;
   background-color: var(--theme-color-2);
   border: 2px solid var(--theme-color-2);
-  font-weight: bold;
   color: #fff;
   cursor: pointer;
-  transition: var(--theme-transition);
-  padding: 10px 20px;
   display: flex;
-  align-items: center;
+  font-family: var(--theme-font-family);
+  font-weight: 700;
   gap: 5px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: var(--theme-transition);
 
   svg path {
     fill: #fff;
@@ -21,8 +21,8 @@ $component-name: c-button;
 
 
   &:disabled {
-    opacity: .5;
     cursor: not-allowed;
+    opacity: .5;
   }
 
 
@@ -36,8 +36,8 @@ $component-name: c-button;
 
   &--secondary {
     background-color: transparent;
-    color: var(--theme-color-1);
     border-color: var(--theme-color-1);
+    color: var(--theme-color-1);
 
     &:not(:disabled):hover,
     &:not(:disabled):focus,

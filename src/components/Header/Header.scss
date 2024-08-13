@@ -1,4 +1,4 @@
-@import "../../assets/scss/abstracts";
+@import url("../../assets/scss/abstracts");
 
 $desktop: 600;
 
@@ -12,9 +12,9 @@ $desktop: 600;
   z-index: z-index("fixed-header");
 
   &__content {
-    padding-top: var(--global-module-size);
-    padding-bottom: var(--global-module-size);
     grid-template-columns: 1fr 1fr;
+    padding-bottom: var(--global-module-size);
+    padding-top: var(--global-module-size);
     @include content("grid");
 
     @include breakpoint($desktop) {
@@ -42,19 +42,19 @@ $desktop: 600;
 
   @media only screen and (max-width: "#{$desktop - 1}px") {
     &__menu {
+      align-items: flex-start;
+      background-color: var(--theme-color-1);
+      box-shadow: var(--theme-box-shadow);
+      flex-direction: column;
       height: 100%;
       left: 0;
-      width: rem(200);
-      padding-top: var(--global-module-size);
       padding-left: var(--global-module-size);
-      background-color: var(--theme-color-1);
-      transition: var(--theme-transition);
-      box-shadow: var(--theme-box-shadow);
+      padding-top: var(--global-module-size);
       position: fixed;
       top: 0;
       transform: translateX(-100%);
-      align-items: flex-start;
-      flex-direction: column;
+      transition: var(--theme-transition);
+      width: rem(200);
       z-index: z-index("mobile-menu");
 
       &.is-active {
@@ -63,32 +63,32 @@ $desktop: 600;
     }
 
     &__search {
-      position: fixed;
-      top: rem(60);
-      left: 0;
-      width: 100%;
       background-color: var(--theme-color-2);
       display: grid;
-      place-items: center;
-      padding: var(--global-module-size);
+      left: 0;
       opacity: 0;
-      visibility: hidden;
+      padding: var(--global-module-size);
+      place-items: center;
+      position: fixed;
+      top: rem(60);
       transition: var(--theme-transition);
+      visibility: hidden;
+      width: 100%;
       z-index: z-index("search-bar");
 
       &.is-active {
         opacity: 1;
-        visibility: visible;
         transform: translateY(rem(20));
+        visibility: visible;
       }
     }
   }
 
   &__menu-item {
-    color: var(--text-color-1);
-    padding: rem(10);
-    display: flex;
     align-items: center;
+    color: var(--text-color-1);
+    display: flex;
+    padding: rem(10);
     transition: var(--theme-transition);
     width: 100%;
 
@@ -120,13 +120,13 @@ $desktop: 600;
   }
 
   &__buttons {
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: flex-end;
 
     svg {
-      padding-right: rem(3);
       cursor: pointer;
+      padding-right: rem(3);
 
       path {
         fill: var(--text-color-1);
@@ -151,8 +151,8 @@ $desktop: 600;
 
   &__search {
     @include breakpoint($desktop) {
-      display: flex;
       align-items: center;
+      display: flex;
       justify-content: center;
       visibility: visible;
     }

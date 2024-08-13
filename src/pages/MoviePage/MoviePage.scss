@@ -1,12 +1,12 @@
-@import "../../assets/scss/abstracts";
+@import url("../../assets/scss/abstracts");
 
 .l-movie {
   &__content {
-    display: grid;
-    grid-template-columns: 200px calc(100% - 220px);
-    gap: var(--global-module-size);
-    padding: var(--global-module-size);
     background-color: var(--background-content-color);
+    display: grid;
+    gap: var(--global-module-size);
+    grid-template-columns: 200px calc(100% - 220px);
+    padding: var(--global-module-size);
     width: 100%;
   }
 
@@ -32,9 +32,9 @@
     gap: rem(10);
 
     li {
+      border: 2px solid var(--text-color-1);
       border-radius: rem(10);
       padding: rem(10);
-      border: 2px solid var(--text-color-1);
     }
   }
 }

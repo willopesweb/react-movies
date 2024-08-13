@@ -1,8 +1,8 @@
-@import "abstracts";
-@import "base/theme-variables";
-@import "base/reset";
-@import "base/helpers";
-@import "layout/l-page";
+@import url("abstracts");
+@import url("base/theme-variables");
+@import url("base/reset");
+@import url("base/helpers");
+@import url("layout/l-page");
 
 body {
   background: linear-gradient(to right, #10101f, #11122b, #0c143c);

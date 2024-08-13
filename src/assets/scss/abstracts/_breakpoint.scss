@@ -45,13 +45,13 @@ $lg-device: 1200px;
 
 @mixin breakpoint($point, $direction: "mobile") {
 	@if ($direction =="mobile") {
-		@media (min-width: rem($point)) {
+		@media (width >= rem($point)) {
 			@content;
 		}
 	}
 
 	@else if ($direction =="desktop") {
-		@media (max-width: rem($point)) {
+		@media (width <= rem($point)) {
 			@content;
 		}
 	}

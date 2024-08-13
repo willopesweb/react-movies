@@ -1,4 +1,4 @@
-@import "../../assets/scss/abstracts";
+@import url("../../assets/scss/abstracts");
 $component-name: c-login;
 
 .#{$component-name} {
@@ -7,8 +7,8 @@ $component-name: c-login;
 
   &--modal {
     color: var(--theme-color-1);
-    max-width: rem(400);
     margin: 0 auto;
+    max-width: rem(400);
 
     .c-input input {
       border: 2px solid var(--theme-color-1);
