@@ -19,6 +19,7 @@
     "font-weight-notation": "numeric",
     "function-url-quotes": "always",
     "indentation": "tab",
+    "import-notation": false,
     "max-empty-lines": 1,
     "no-missing-end-of-source-newline": true,
     "number-leading-zero": "always",
