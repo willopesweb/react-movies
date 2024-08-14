@@ -13,7 +13,7 @@ const Header = () => {
   const [isMobileMenuActive, setIsMobileMenuActive] = useState(false);
   const [isMobileSearchActive, setIsMobileSearchActive] = useState(true);
 
-  const [isModalLoginOpen, setIsModalLoginOpen] = useState(true);
+  const [isModalLoginOpen, setIsModalLoginOpen] = useState(false);
 
   const handleBeforeInjection = (svg: SVGSVGElement) => {
     svg.classList.add('l-header__logo');

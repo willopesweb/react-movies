@@ -1,42 +1,40 @@
 import { useState, useEffect } from 'react'
-import { fetchMovies } from '../api/movieApi';
+import { useSearchParams } from 'react-router-dom';
+import { fetchMoviesBySearch } from '../api/movieApi';
 import MovieList from '../components/MovieList/MovieList';
 import { Movie } from "../types";
 import Pagination from '../components/Pagination/Pagination';
-import { useSearchParams } from 'react-router-dom';
 
-const HomePage = () => {
+const SearchPage = () => {
   const [queryParams] = useSearchParams();
   const [movies, setMovies] = useState<Movie[]>([]);
   const [totalPages, setTotalPages] = useState(0);
   const currentPage = parseInt(queryParams.get('page') || '1', 10);
-
+  const query = queryParams.get('query');
 
   useEffect(() => {
-    const getMovies = async () => {
-      try {
-        const { results, total_pages } = await fetchMovies(currentPage);
+    const searchMovies = async () => {
+      if (query) {
+        const { results, total_pages } = await fetchMoviesBySearch(query, currentPage);
         setMovies(results);
         setTotalPages(total_pages);
-      } catch (error) {
-        console.error('Erro ao buscar filmes:', error);
       }
-    }
+    };
 
-    getMovies();
-  }, [currentPage])
+    searchMovies();
+  }, [query, currentPage]);
 
   return (
     <main>
       <header className="l-page__header">
-        <h1 className="l-page__title">Filmes populares</h1>
+        <h1 className="l-page__title">Resultados para: {query}</h1>
       </header>
       <MovieList movies={movies} />
       {totalPages > 1 && (
-        <Pagination totalPages={totalPages} currentPage={currentPage} hideNumbers={true} />
+        <Pagination query={query as string} totalPages={totalPages} currentPage={currentPage} />
       )}
     </main>
   );
 }
 
-export default HomePage
+export default SearchPage

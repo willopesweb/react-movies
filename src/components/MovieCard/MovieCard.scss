@@ -28,10 +28,18 @@
     border-radius: rem(15);
     overflow: hidden;
 
-    img {
-      height: 100%;
-      object-fit: cover;
-      width: 100%;
+    .c-image {
+      min-height: rem(300);
+
+      @include breakpoint(100) {
+        min-height: rem(400);
+      }
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
     }
   }
 

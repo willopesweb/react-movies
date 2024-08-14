@@ -5,6 +5,7 @@ import FavoritesPage from './pages/FavoritesPage';
 import Header from './components/Header/Header';
 import './assets/scss/styles.scss';
 import LoginPage from './pages/LoginPage';
+import SearchPage from './pages/SearchPage';
 
 function App() {
 
@@ -14,7 +15,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/movie/:id" element={<MoviePage />} />
-        <Route path="/favoritos" element={<FavoritesPage />} />
+        <Route path="/search" element={<SearchPage />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
     </BrowserRouter>
