@@ -22,7 +22,6 @@ const MoviePage = () => {
     getMovieDetails();
   }, [id]);
 
-  console.log(movie);
   return (
     <main className="l-movie">
 

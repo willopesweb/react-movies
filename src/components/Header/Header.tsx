@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '../../redux/store';
+import { logoutUser } from '../../userUtils';
 import './Header.scss';
 import { ReactSVG } from 'react-svg';
 import Logo from "./logo.svg";
@@ -12,8 +15,11 @@ const Header = () => {
 
   const [isMobileMenuActive, setIsMobileMenuActive] = useState(false);
   const [isMobileSearchActive, setIsMobileSearchActive] = useState(true);
-
   const [isModalLoginOpen, setIsModalLoginOpen] = useState(false);
+
+  const isAuthenticated = useSelector((state: RootState) => state.user.isAuthenticated);
+
+  const dispatch = useDispatch();
 
   const handleBeforeInjection = (svg: SVGSVGElement) => {
     svg.classList.add('l-header__logo');
@@ -43,18 +49,39 @@ const Header = () => {
             >
               <Icon size={20} icon="favorite" />Início
             </NavLink>
+
             <NavLink
-              to="/favoritos"
+              to="/favorites"
+              title="Favoritos"
               aria-current={window.location.pathname === '/favoritos' ? 'page' : 'false'}
               className='l-header__menu-item'
+              onClick={
+                (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+                  if (!isAuthenticated) {
+                    e.preventDefault();
+                    setIsModalLoginOpen(true);
+                  }
+                }
+              }
             >
-              <Icon size={20} icon="star" />Favoritos</NavLink>
-            <NavLink
-              to="/login"
-              aria-current={window.location.pathname === '/login' ? 'page' : 'false'}
-              className='l-header__menu-item'
-            >
-              Login</NavLink>
+              <Icon size={20} icon="star" />Favoritos
+            </NavLink>
+            {
+              isAuthenticated ? (
+                <NavLink
+                  to="/"
+                  onClick={() => logoutUser(dispatch)}
+                >Sair</NavLink>
+              ) : (
+                <NavLink
+                  to="/login"
+                  aria-current={window.location.pathname === '/login' ? 'page' : 'false'}
+                  className='l-header__menu-item'
+                >
+                  Login</NavLink>
+              )
+            }
+
           </nav>
           <div className={'l-header__buttons'}>
             <button onClick={() => setIsMobileSearchActive(!isMobileSearchActive)} >
@@ -68,7 +95,7 @@ const Header = () => {
         </div>
       </header>
 
-      {isModalLoginOpen && (
+      {isModalLoginOpen && !isAuthenticated && (
         <Modal title="Faça Login para continuar" closeModal={() => setIsModalLoginOpen(false)}>
           <FormLogin additionalClass='c-login--modal' />
         </Modal>

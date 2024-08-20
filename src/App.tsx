@@ -1,13 +1,20 @@
+import { useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import HomePage from './pages/HomePage';
 import MoviePage from './pages/MoviePage/MoviePage';
 import FavoritesPage from './pages/FavoritesPage';
 import Header from './components/Header/Header';
-import './assets/scss/styles.scss';
 import LoginPage from './pages/LoginPage';
 import SearchPage from './pages/SearchPage';
+import { checkSession } from './userUtils';
+import './assets/scss/styles.scss';
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    checkSession(dispatch);
+  }, []);
 
   return (
     <BrowserRouter>

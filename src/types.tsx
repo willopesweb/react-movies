@@ -22,3 +22,8 @@ export interface Genre {
   id: number;
   name: string;
 }
+
+export interface User {
+  username: string;
+  id: string
+}
